@@ -1,51 +1,426 @@
 <!DOCTYPE html>
-<html><head>
-<title>PS4  Exploit Host by GamerHack</title>
-<link rel="stylesheet" href="style.css">
-</head>
-<body>
-<script>
-var histlength=history.length;history.go(-histlength 2);
-</script>
-<h1 id=msgs>PS4 o6iml</h1>
-<hr>
-<br>
-<div id=menu>
-<h1 style="font-size: 18px;color: yellow;">Select Your Firmware</h1>
-<button class="btn btn-multi" onmouseover="msgs.innerHTML='PS4 GoldHEN Host for 5.05 and 7.00 to 13.52 FW - (Auto Exploit Selection)'" onmouseout="msgs.innerHTML='PS4  Exploit Host by GamerHack'" onclick="location.replace('g2all/index.html')"> GoldHEN Multi FW </button>
-<button class="btn" onmouseover="msgs.innerHTML='PS4 5.05 FW Host v2.5'" onmouseout="msgs.innerHTML='PS4  Exploit Host by GamerHack'" onclick="location.replace('505/index.html')"> 5.05 FW v2.5 </button>
-<a href="672goldhen/index.html"><button class="btn" onmouseover="msgs.innerHTML='PS4 6.72 FW GoldHEN Host'" onmouseout="msgs.innerHTML='PS4  Exploit Host by GamerHack'"> 6.72 FW GoldHEN </button></a>
-<a href="672/index.html"><button class="btn" onmouseover="msgs.innerHTML='PS4 6.72 FW Host v3.0'" onmouseout="msgs.innerHTML='PS4  Exploit Host by GamerHack'"> 6.72 FW v3.0 </button></a>
-<br>
-<a href="900goldhen/index.html"><button class="btn" onmouseover="msgs.innerHTML='PS4 9.00 FW GoldHEN Host - (FontFaceSet Webkit)'" onmouseout="msgs.innerHTML='PS4  Exploit Host by GamerHack'"> 9.00 FW GoldHEN </button></a>
-<a href="900v3/index.html"><button class="btn" onmouseover="msgs.innerHTML='PS4 9.00 FW Host v3.0 - (FontFaceSet Webkit)'" onmouseout="msgs.innerHTML='PS4  Exploit Host by GamerHack'"> 9.00 FW v3.0 </button></a>
-<br>
-<button class="btn" onmouseover="msgs.innerHTML='Restore a Host to User&#8217;s Guide without using DNS'" onmouseout="msgs.innerHTML='PS4  Exploit Host by GamerHack'" onclick="location.replace('restore/index.html')"> Restore Host </button>
-<br>
-<button class="btn btn-onln" onmouseover="msgs.innerHTML='If you like my work you can support me with a donation.'" onmouseout="msgs.innerHTML='PS4  Exploit Host by GamerHack'" onclick="donations()" style="margin-top: 137px;margin-bottom: 77px;width: 468px;"> For Donations (Only in Cryptocurrencies) </button>
-<h1 style="margin-top: 78px;">Designed by:<a href="https://twitter.com/muntadar" style="color: #f31414;margin-left: 10px;margin-right: 10px;">@muntadar</a>A special thanks to all the devs on the scene.</h1>
-</div>
-<div id=crypto>
-<h1 style="font-size: 18px;color: yellow;">Donate with Bitcoin (BTC):</h1>
-<img src="btc.jpg" width="150" height="150">
-<br>
-<h1 style="font-size: 18px;">bc1q6cnsykmvem6zgw8wag3ygee0jkhtxj6rkp2nrm</h1>
-<br>
-<h1 style="font-size: 18px;color: yellow;">Donate with Ethereum (ETH):</h1>
-<img src="eth.jpg" width="150" height="150">
-<h1 style="font-size: 18px;">0x7Ae1825ddE196925dB8B7832F436cA0eAeaF932c</h1>
-<button class="btn" onclick="load_menu()"> Return </button>
-</div>
-<script>
-function donations(){
-document.getElementById("crypto").style.display = "block";
-document.getElementById("menu").style.display = "none";
+<html lang="ar" dir="rtl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Muntadar Host</title>
+
+<style>
+*{
+    box-sizing:border-box;
+    margin:0;
+    padding:0;
 }
 
-function load_menu(){
-document.getElementById("menu").style.display = "block";
-document.getElementById("crypto").style.display = "none";
+html,body{
+    width:100%;
+    min-height:100%;
 }
+
+body{
+    font-family:Arial, Tahoma, sans-serif;
+    color:white;
+    background:#05070b url("img.jpg") center center / cover fixed no-repeat;
+    position:relative;
+    overflow-x:hidden;
+}
+
+body::before{
+    content:"";
+    position:fixed;
+    inset:0;
+    background:
+        linear-gradient(
+            135deg,
+            rgba(0,0,0,.72),
+            rgba(0,30,70,.55),
+            rgba(0,0,0,.78)
+        );
+    z-index:-1;
+}
+
+.container{
+    width:100%;
+    max-width:650px;
+    margin:auto;
+    padding:25px 15px 40px;
+    text-align:center;
+}
+
+/* الشعار */
+.logo{
+    font-size:42px;
+    font-weight:bold;
+    color:#fff;
+    text-shadow:
+        0 0 8px #0070ff,
+        0 0 20px #0070ff;
+    margin-top:10px;
+}
+
+.subtitle{
+    margin-top:8px;
+    font-size:16px;
+    color:#cfe8ff;
+}
+
+/* رموز البلايستيشن */
+.symbols{
+    margin:20px 0;
+    font-size:32px;
+    letter-spacing:12px;
+    color:#fff;
+    text-shadow:0 0 12px #0070ff;
+}
+
+/* البطاقة */
+.card{
+    background:rgba(0,0,0,.62);
+    border:1px solid rgba(0,145,255,.65);
+    border-radius:22px;
+    padding:22px 16px;
+    margin-top:18px;
+    box-shadow:
+        0 0 20px rgba(0,112,255,.35),
+        inset 0 0 25px rgba(0,80,160,.15);
+    backdrop-filter:blur(5px);
+}
+
+.card h2{
+    font-size:24px;
+    margin-bottom:8px;
+}
+
+.card p{
+    color:#c8dfff;
+    font-size:14px;
+    margin-bottom:18px;
+}
+
+/* الأزرار */
+.btn{
+    display:block;
+    width:100%;
+    padding:16px 12px;
+    margin:11px 0;
+    border-radius:14px;
+    border:1px solid #168cff;
+    background:
+        linear-gradient(
+            135deg,
+            rgba(0,112,255,.85),
+            rgba(0,55,130,.85)
+        );
+    color:white;
+    text-decoration:none;
+    font-size:18px;
+    font-weight:bold;
+    box-shadow:0 5px 15px rgba(0,100,255,.25);
+    transition:.2s;
+}
+
+.btn:hover{
+    transform:scale(1.02);
+    box-shadow:
+        0 0 20px rgba(0,145,255,.75);
+}
+
+.btn:active{
+    transform:scale(.98);
+}
+
+/* زر التلقائي */
+.auto{
+    background:
+        linear-gradient(
+            135deg,
+            #008cff,
+            #0047a5
+        );
+    border:2px solid #55b8ff;
+    font-size:21px;
+    box-shadow:
+        0 0 20px rgba(0,140,255,.55);
+}
+
+.auto span{
+    display:block;
+    font-size:13px;
+    color:#dff3ff;
+    margin-top:5px;
+}
+
+/* زر فتح الاختيارات */
+.manual-toggle{
+    cursor:pointer;
+    border:1px solid #777;
+    background:rgba(20,25,35,.9);
+}
+
+.manual{
+    display:none;
+    margin-top:15px;
+}
+
+.manual.show{
+    display:block;
+}
+
+.group-title{
+    color:#66bdff;
+    font-size:16px;
+    margin:20px 0 8px;
+    border-bottom:1px solid rgba(100,180,255,.25);
+    padding-bottom:7px;
+}
+
+.small{
+    font-size:15px;
+    padding:13px 10px;
+}
+
+/* الحالة */
+.status{
+    margin-top:18px;
+    padding:13px;
+    border-radius:12px;
+    background:rgba(0,0,0,.5);
+    border:1px solid rgba(255,255,255,.12);
+    color:#bde2ff;
+    font-size:14px;
+}
+
+/* الحقوق */
+.footer{
+    margin-top:25px;
+    color:#a9c8e8;
+    font-size:13px;
+}
+
+.footer strong{
+    color:white;
+}
+
+/* موبايل */
+@media(max-width:450px){
+
+    .logo{
+        font-size:34px;
+    }
+
+    .symbols{
+        font-size:25px;
+        letter-spacing:7px;
+    }
+
+    .card{
+        padding:18px 12px;
+    }
+
+    .btn{
+        font-size:16px;
+    }
+}
+</style>
+</head>
+
+<body>
+
+<div class="container">
+
+    <div class="logo">
+        MUNTADAR HOST
+    </div>
+
+    <div class="subtitle">
+        PS4 Exploit Host
+    </div>
+
+    <div class="symbols">
+        △ ○ × □
+    </div>
+
+
+    <!-- النظام التلقائي -->
+    <div class="card">
+
+        <h2>⚡ التشغيل التلقائي</h2>
+
+        <p>
+            خلّي الـPS4 يحدد إصدار النظام تلقائياً
+            ويفتح المسار المناسب.
+        </p>
+
+        <a
+            class="btn auto"
+            href="g2all/index.html"
+            onclick="autoStart()"
+        >
+            🚀 تشغيل تلقائي
+            <span>
+                الكشف عن إصدار PS4 تلقائياً
+            </span>
+        </a>
+
+        <div id="status" class="status">
+            جاهز — اضغط تشغيل تلقائي
+        </div>
+
+    </div>
+
+
+    <!-- النظام اليدوي -->
+    <div class="card">
+
+        <h2>🎮 اختيار يدوي</h2>
+
+        <p>
+            إذا تريد تختار المسار بنفسك،
+            افتح الاختيارات أدناه.
+        </p>
+
+        <button
+            class="btn manual-toggle"
+            onclick="toggleManual()"
+        >
+            📂 إظهار الإصدارات
+        </button>
+
+
+        <div id="manual" class="manual">
+
+            <!-- 5.05 -->
+            <div class="group-title">
+                Firmware 5.xx
+            </div>
+
+            <a
+                class="btn small"
+                href="505/index.html"
+            >
+                PS4 5.05 / 5.07
+            </a>
+
+
+            <!-- 6.72 -->
+            <div class="group-title">
+                Firmware 6.xx
+            </div>
+
+            <a
+                class="btn small"
+                href="672goldhen/index.html"
+            >
+                PS4 6.72 — GoldHEN
+            </a>
+
+            <a
+                class="btn small"
+                href="672/index.html"
+            >
+                PS4 6.72
+            </a>
+
+
+            <!-- 9.00 -->
+            <div class="group-title">
+                Firmware 9.xx
+            </div>
+
+            <a
+                class="btn small"
+                href="900goldhen/index.html"
+            >
+                PS4 9.00 — GoldHEN
+            </a>
+
+            <a
+                class="btn small"
+                href="900v3/index.html"
+            >
+                PS4 9.00 — v3
+            </a>
+
+
+            <!-- 11 وما فوق -->
+            <div class="group-title">
+                Firmware 11.xx → 13.xx
+            </div>
+
+            <a
+                class="btn small"
+                href="g2all/index.html"
+            >
+                PS4 11.00 → 12.02
+            </a>
+
+            <a
+                class="btn small"
+                href="g2all/index.html"
+            >
+                PS4 12.50
+            </a>
+
+            <a
+                class="btn small"
+                href="g2all/index.html"
+            >
+                PS4 13.00 → 13.52
+            </a>
+
+        </div>
+
+    </div>
+
+
+    <div class="footer">
+        <strong>Muntadar Host</strong>
+        <br>
+        Custom PS4 Exploit Host
+    </div>
+
+</div>
+
+
+<script>
+
+function toggleManual(){
+
+    var menu = document.getElementById("manual");
+
+    if(menu.classList.contains("show")){
+
+        menu.classList.remove("show");
+
+    }else{
+
+        menu.classList.add("show");
+
+    }
+}
+
+
+function autoStart(){
+
+    var status = document.getElementById("status");
+
+    status.innerHTML =
+        "🔎 جاري الكشف عن إصدار نظام PS4...";
+
+}
+
+
+/*
+    ملاحظة:
+    الكشف الحقيقي يتم بواسطة
+    g2all/index.html الموجود عندك.
+
+    لذلك لا نحاول تخمين إصدار الجهاز
+    من المتصفح هنا.
+*/
+
 </script>
+
 </body>
 </html>
