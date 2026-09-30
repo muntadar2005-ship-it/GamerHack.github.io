@@ -89,3 +89,6 @@ a {
 .btn-multi:hover {
     background-color: #daa520;
 }
+h1 + h2, h1 + p, h1 + h3, h2 {
+    display: none !important;
+}
